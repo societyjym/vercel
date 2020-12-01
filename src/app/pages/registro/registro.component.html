@@ -1,0 +1,25 @@
+<div class="imgFondo">
+  <div class="signin text-center" *ngIf="!login">
+
+    <form class="form-signin was-validated" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+      <h3 class="mb-3 font-weight-normal">Login</h3>
+      <div class="form-group">
+        <input type="text" class="form-control mt-3" placeholder="Usuario" name="usuarioLogin" [(ngModel)]="usuario"  pattern="(?=.*[A-Za-z]).{2,10}" #usuarioLogin="ngModel" required>
+        <div *ngIf="!usuarioLogin.valid && usuarioLogin.touched" class= "invaled-feedback" >Error en el campo de usuario</div>
+        <div *ngIf="!usuarioLogin.errors?.required && usuarioLogin.touched" class="invaled-feedback">Este campo es obligatorio</div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control mt-3" placeholder="Contraseña" name="passwordLogin" [(ngModel)]="password"  #passwordLogin="ngModel" required  >
+
+        <div *ngIf="passwordLogin.errors?.required && passwordLogin.touched" class="invaled-feedback">Este campo es obligatorio</div>
+
+      </div>
+      <div  *ngIf="!validarLogin" class="alert alert-danger">Usuario y contraseña no válidos</div>
+
+      <button [disabled]="!f.valid" class="btn btn-lg btn-primary btn-block mt-3">Ingresar</button>
+    </form>
+
+
+  </div>
+</div>
+
