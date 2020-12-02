@@ -1,0 +1,12 @@
+.navbar{
+  background-color: #1B50A6;
+}
+.navbar a {
+  color: white;
+}
+.fas {
+  font-size: 25px;
+}
+.navbar-nav{
+  margin-left: 2%;
+}

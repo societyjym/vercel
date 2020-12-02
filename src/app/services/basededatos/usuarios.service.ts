@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
+import { Ruta } from '../../config';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,14 @@ export class UsuariosService {
   public url: string;
   constructor(private  http: HttpClient) {
 
-    this.url ="assets/json/usuarios.json";
+    this.url = Ruta.url;
 
   }
-  getUsuarios(){
-    return this.http.get(this.url);
+  loginUsuario(listaUsuario){
+
+    const headers = new HttpHeaders({
+    });
+
+    return this.http.post(`${this.url}users/login/`, listaUsuario, {headers})
   }
 }

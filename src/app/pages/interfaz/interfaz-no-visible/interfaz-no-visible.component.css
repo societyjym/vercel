@@ -1,0 +1,53 @@
+/* Inicio de interfaz no visible */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&display=swap');
+
+.interfaz-no-visible {
+  width: 200px;
+  height: 100vh;
+  background-color: #1B50A6;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 0px 0px 0px rgb(0,0,0,0.35);
+  z-index: 2;
+}
+.logo{
+  text-align: center;
+  margin: auto 0;
+  font-family: 'Hind Guntur', sans-serif;
+}
+
+
+.foto-perfil{
+  margin-bottom: 5vh;
+  font-family: 'Hind Guntur', sans-serif;
+}
+.foto-perfil img{
+  margin-left: 8px;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+.foto-perfil label{
+  margin-left: 8px;
+}
+hr {
+  background-color: white;
+  height: 0.05px;
+}
+.lista-acciones a{
+  display: block;
+  padding: 1vh;
+  color: white;
+
+}
+.lista-acciones h6 {
+  font-family: 'Hind Guntur', sans-serif;
+  font-size: 2vh;
+  display: contents;
+
+}
+

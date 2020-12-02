@@ -9,40 +9,22 @@ import { UsuariosService } from "../../services/basededatos/usuarios.service";
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  public articuloJson:any;
-  public renderArticulo:any;
-  public login:boolean=false;
-  public usuario: string;
-  public password: string;
-  public usuariosJson:any;
-  public renderUsuario:any;
+  public validacion:any;
   public validarLogin:boolean=true;
 
-  constructor(activateRoute: ActivatedRoute, private usuariosService: UsuariosService) { }
+  constructor(activateRoute: ActivatedRoute, private usuariosService: UsuariosService) {
+    this.validacion = {
+      username:null,
+      password:null
+    }
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(f: NgForm){
-    this.usuariosService.getUsuarios()
-    .subscribe(respuesta =>{
-      this.usuariosJson = respuesta;
-    })
-
-    this.renderUsuario = this.usuariosJson.find(result => {
-      if (result.usuario == this.usuario && result.password == this.password){
-        return true;
-      }else{
-        return false;
-      }
-    })
-
-    if (this.renderUsuario) {
-      this.login = true;
-    }else{
-      this.validarLogin = false;
-    }
-
-
+    //  this.usuariosService.loginUsuario(this.validacion).subscribe( respuesta =>{
+    //    console.log("respuesta", respuesta)
+    //  })
   }
 }
